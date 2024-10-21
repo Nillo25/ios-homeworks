@@ -3,15 +3,20 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     let profileHeaderView = ProfileHeaderView()
-    let testView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Profile"
         view.backgroundColor = .white
+        setupProfileHeaderView()
+        
+    }
+    
+    private func setupProfileHeaderView() {
         profileHeaderView.translatesAutoresizingMaskIntoConstraints = false
         profileHeaderView.backgroundColor = .lightGray
         view.addSubview(profileHeaderView)
+        
         NSLayoutConstraint.activate([
             profileHeaderView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
             profileHeaderView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),

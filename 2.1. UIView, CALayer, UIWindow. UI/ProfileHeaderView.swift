@@ -30,7 +30,7 @@ class ProfileHeaderView: UIView {
         return textField
     }()
     
-    let setStatusButton: UIButton = {
+    private lazy var setStatusButton: UIButton = {
         let button = UIButton(type: .system)
         button.setTitle("Show status", for: .normal)
         button.setTitleColor(.white, for: .normal)
@@ -54,15 +54,18 @@ class ProfileHeaderView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .lightGray
-        
-        addSubview(avatarImageView)
-        addSubview(nameLabel)
-        addSubview(statusTextField)
-        addSubview(setStatusButton)
+        setupSubviews()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupSubviews() {
+        addSubview(avatarImageView)
+        addSubview(nameLabel)
+        addSubview(statusTextField)
+        addSubview(setStatusButton)
     }
     
     override func layoutSubviews() {
