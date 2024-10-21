@@ -22,13 +22,15 @@ class ProfileViewController: UIViewController {
             profileHeaderView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             profileHeaderView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             profileHeaderView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            profileHeaderView.heightAnchor.constraint(equalToConstant: 220)
+            profileHeaderView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
     
     private func setupBottomButton() {
         bottomButton.translatesAutoresizingMaskIntoConstraints = false
         bottomButton.setTitle("New Button", for: .normal)
+        bottomButton.backgroundColor = .systemBlue
+        bottomButton.setTitleColor(.white, for: .normal)
         view.addSubview(bottomButton)
         
         NSLayoutConstraint.activate([
